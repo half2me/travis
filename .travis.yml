@@ -1,0 +1,10 @@
+language: php
+addons:
+  mariadb: '10.3'
+php: 7.2
+env:
+  global:
+  - DATABASE_URL="mysql://root:@localhost/example"
+  - DATABASE_TEST_URL="sqlite:///:memory:"
+before_script:
+- mysql -e "CREATE DATABASE example"
